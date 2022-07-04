@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.color {
+  border: 1px solid black;
+}
+
+.um {
+  background-color: black;
+  display: inline-block;
+}
+
+.dois {
+  background-color: red;
+  display: inline-block;
+}
+
+.tres {
+  background-color: green;
+  display: inline-block;
+}
+
+.quatro {
+  background-color: blue;
+  display: inline-block;
+}
