@@ -9,3 +9,51 @@ function addPixel() {
 }
 
 addPixel();
+
+// const paletas = document.querySelector('#color-palette');
+
+// paletas.addEventListener('click', function (event) {
+//   const eventTargetSelected = event.target;
+//   eventTargetSelected.classList.add('selected');
+//   if ()
+// });
+
+const color1 = document.querySelector('.um');
+const color2 = document.querySelector('.dois');
+const color3 = document.querySelector('.tres');
+const color4 = document.querySelector('.quatro');
+
+function selectColorOne() {
+  color1.classList.add('selected');
+  color2.classList.remove('selected');
+  color3.classList.remove('selected');
+  color4.classList.remove('selected');
+}
+
+function selectColorTwo() {
+  color1.classList.remove('selected');
+  color2.classList.add('selected');
+  color3.classList.remove('selected');
+  color4.classList.remove('selected');
+}
+
+function selectColorThree() {
+  color1.classList.remove('selected');
+  color2.classList.remove('selected');
+  color3.classList.add('selected');
+  color4.classList.remove('selected');
+}
+
+function selectColorFour() {
+  color1.classList.remove('selected');
+  color2.classList.remove('selected');
+  color3.classList.remove('selected');
+  color4.classList.add('selected');
+}
+
+color1.addEventListener('click', selectColorOne);
+color2.addEventListener('click', selectColorTwo);
+color3.addEventListener('click', selectColorThree);
+color4.addEventListener('click', selectColorFour);
+
+window.onload = selectColorOne;
