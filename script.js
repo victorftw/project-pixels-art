@@ -3,20 +3,11 @@ function addPixel() {
     const pixelBoard = document.querySelector('#pixel-board');
     const pixeis = document.createElement('div');
     pixeis.classList = 'pixel';
-    pixeis.style.backgroundColor = 'white';
     pixelBoard.appendChild(pixeis);
   }
 }
 
 addPixel();
-
-// const paletas = document.querySelector('#color-palette');
-
-// paletas.addEventListener('click', function (event) {
-//   const eventTargetSelected = event.target;
-//   eventTargetSelected.classList.add('selected');
-//   if ()
-// });
 
 const color1 = document.querySelector('.um');
 const color2 = document.querySelector('.dois');
@@ -55,5 +46,16 @@ color1.addEventListener('click', selectColorOne);
 color2.addEventListener('click', selectColorTwo);
 color3.addEventListener('click', selectColorThree);
 color4.addEventListener('click', selectColorFour);
+
+function limpar() {
+  const pixels = document.getElementsByClassName('pixel');
+  for (let index = 0; index < pixels.length; index += 1) {
+    pixels[index].style.backgroundColor = 'white';
+  }
+}
+
+const botaoClear = document.getElementById('clear-board');
+
+botaoClear.addEventListener('click', limpar);
 
 window.onload = selectColorOne;

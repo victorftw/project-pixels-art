@@ -37,11 +37,20 @@ header {
 }
 
 .pixel {
+  background-color: white;
   height: 40px;
   width: 40px;
   border: 1px solid black;
   display: inline-block;
   margin-top: -4px;
+}
+
+#clear-board {
+  display: block;
+  margin: auto;
+  margin-bottom: 15px;
+  height: 30px;
+  padding: 2px;
 }
 
 #pixel-board {
