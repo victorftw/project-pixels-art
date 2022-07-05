@@ -56,6 +56,24 @@ function limpar() {
 
 const botaoClear = document.getElementById('clear-board');
 
+function getSelectedColor() {
+  const selectedColor = document.getElementsByClassName('selected')[0];
+  const color = getComputedStyle(selectedColor).backgroundColor;
+  return color;
+}
+
+const pixel = document.getElementsByClassName('pixel');
+
+for (let index = 0; index < pixel.length; index += 1) {
+  const xablau = pixel[index];
+  xablau.addEventListener('click', (event) => {
+    const selectedColor = getSelectedColor();
+
+    const clickedPixel = event.target;
+    clickedPixel.style.backgroundColor = selectedColor;
+  });
+}
+
 botaoClear.addEventListener('click', limpar);
 
 window.onload = selectColorOne;
