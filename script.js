@@ -19,7 +19,13 @@ function addEventPixel() {
 }
 
 function addPixel(input) {
-  const valor = input * input;
+  let tamanho = input;
+  if (input < 5) {
+    tamanho = 5;
+  } else if (input > 50) {
+    tamanho = 50;
+  }
+  const valor = tamanho * tamanho;
   for (let index = 0; index < valor; index += 1) {
     const pixelBoard = document.querySelector('#pixel-board');
     const pixeis = document.createElement('div');
@@ -27,8 +33,8 @@ function addPixel(input) {
     pixelBoard.appendChild(pixeis);
   }
   const pixelBoard = document.querySelector('#pixel-board');
-  pixelBoard.style.width = `${input * 40 + 40}px`;
-  pixelBoard.style.height = `${input * 40 + 40}px`;
+  pixelBoard.style.width = `${tamanho * 40}px`;
+  pixelBoard.style.height = `${tamanho * 40}px`;
 
   addEventPixel();
 }
@@ -105,5 +111,7 @@ function checaAlerta() {
 
 btnVQV.addEventListener('click', checaAlerta);
 
-window.onload = selectColorOne;
-addPixel(5);
+window.onload = () => {
+  selectColorOne();
+  addPixel(5);
+};

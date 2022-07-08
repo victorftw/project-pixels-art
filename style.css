@@ -37,6 +37,7 @@ header {
 }
 
 .pixel {
+  box-sizing: border-box;
   background-color: white;
   height: 40px;
   width: 40px;
