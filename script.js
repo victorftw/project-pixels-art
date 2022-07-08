@@ -109,9 +109,28 @@ function checaAlerta() {
   }
 }
 
+function randomColor() {
+  const cor1 = Math.floor(Math.random() * 256);
+  const cor2 = Math.floor(Math.random() * 256);
+  const cor3 = Math.floor(Math.random() * 256);
+
+  return `rgb(${cor1},${cor2},${cor3})`;
+}
+
+function changeColor() {
+  const segundaCor = document.querySelector('.dois');
+  const terceiraCor = document.querySelector('.tres');
+  const quartaCor = document.querySelector('.quatro');
+
+  segundaCor.style.backgroundColor = randomColor();
+  terceiraCor.style.backgroundColor = randomColor();
+  quartaCor.style.backgroundColor = randomColor();
+}
+
 btnVQV.addEventListener('click', checaAlerta);
 
 window.onload = () => {
   selectColorOne();
   addPixel(5);
+  changeColor();
 };
